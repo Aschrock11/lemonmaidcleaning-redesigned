@@ -62,7 +62,7 @@ const steps = [
 const content = `
 <section class="hero"><div class="container hero-grid">
   <div class="hero-copy">
-    <span class="pill-badge"><span class="stars">${STARS}</span> 5.0 · 500+ Columbus homes cleaned</span>
+    <span class="pill-badge"><span class="stars">${STARS}</span> Rated 5.0 by Columbus homeowners</span>
     <h1>House cleaning in Columbus that feels like ${squiggle('sunshine')}</h1>
     <p class="hero-sub">Background-checked, insured cleaners who treat your home like their own. Book online in 60 seconds — satisfaction guaranteed, or your money back.</p>
     <div class="cta-row">
@@ -73,7 +73,7 @@ const content = `
       <div class="avatar-stack">
         <span style="background:#1B8A5A">P</span><span style="background:#F2A007">A</span><span style="background:#0D5C3C">K</span>
       </div>
-      <p class="trust-copy mb-0"><span class="stars">${STARS}</span> <strong>5.0</strong> from 50+ reviews<br>Most Columbus customers book within 48 hours</p>
+      <p class="trust-copy mb-0"><span class="stars">${STARS}</span> <strong>5.0</strong>-rated by our customers<br>Most Columbus customers book within 48 hours</p>
     </div>
   </div>
   <div class="hero-media">
@@ -134,10 +134,10 @@ const content = `
 
 <section class="section-dark stats-band"><div class="container">
   <div class="stats-grid">
-    <div class="stat reveal"><span class="num"><span data-count="500" data-suffix="+">0</span></span><span class="lbl">Columbus homes cleaned</span></div>
-    <div class="stat reveal reveal-d1"><span class="num"><span data-count="5.0">0</span></span><span class="lbl">Average review rating</span></div>
-    <div class="stat reveal reveal-d2"><span class="num"><span data-count="24" data-suffix="hr">0</span></span><span class="lbl">Re-clean guarantee</span></div>
-    <div class="stat reveal reveal-d3"><span class="num"><span data-count="10">0</span></span><span class="lbl">Communities served</span></div>
+    <div class="stat reveal"><span class="num"><span data-count="5.0">0</span></span><span class="lbl">Average review rating</span></div>
+    <div class="stat reveal reveal-d1"><span class="num"><span data-count="24" data-suffix="hr">0</span></span><span class="lbl">Re-clean guarantee</span></div>
+    <div class="stat reveal reveal-d2"><span class="num"><span data-count="10">0</span></span><span class="lbl">Communities served</span></div>
+    <div class="stat reveal reveal-d3"><span class="num"><span data-count="7">0</span></span><span class="lbl">Days a week we clean</span></div>
   </div>
 </div></section>
 
@@ -175,7 +175,7 @@ const content = `
   <div class="section-head">
     <span class="kicker">Reviews</span>
     <h2>What Columbus homeowners are saying</h2>
-    <p class="lead"><span class="rating-summary"><span class="big">5.0</span> <span class="stars">${STARS}</span> from 50+ verified reviews</span></p>
+    <p class="lead"><span class="rating-summary"><span class="big">5.0</span> <span class="stars">${STARS}</span> from verified local customers</span></p>
   </div>
   <div class="grid-3">
     ${REVIEWS.map((r, i) => reviewCard(r, `reveal-d${i}`)).join('\n    ')}

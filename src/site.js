@@ -261,7 +261,6 @@ const LOCAL_BUSINESS = {
     { '@type': 'Review', author: { '@type': 'Person', name: 'Annie Nobile' }, datePublished: '2026-05-04', reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'Lisa did a wonderful job on our deep clean! Staff are very sweet and kind. They’re flexible and able to accommodate our busy schedule.' },
     { '@type': 'Review', author: { '@type': 'Person', name: 'Pooja Kanuri' }, datePublished: '2026-04-08', reviewRating: { '@type': 'Rating', ratingValue: '5' }, reviewBody: 'Everything was spotless and perfectly dusted. So impressed with the attention to detail and how fresh everything feels. Highly recommend!' },
   ],
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '50' },
 };
 
 /* ------------------------------------------------------------------ shell */
