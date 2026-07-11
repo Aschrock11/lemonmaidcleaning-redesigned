@@ -1,5 +1,5 @@
 'use strict';
-const { BIZ, ICONS, STARS, ctaBanner, pageHero, reviewCard, REVIEWS, renderPage } = require('../site');
+const { BIZ, ICONS, STARS, pic, crumbsLd, ctaBanner, pageHero, reviewCard, REVIEWS, renderPage } = require('../site');
 
 /* About, contact, booking redirect, legal, thank-you, 404. */
 
@@ -13,7 +13,7 @@ ${pageHero('', {
 
 <section class="section"><div class="container">
   <div class="split">
-    <img class="split-photo reveal" src="images/yellow-chair.jpg" alt="Sunny yellow armchair in a bright, freshly cleaned living room" loading="lazy" width="1600" height="1360">
+    ${pic('', 'yellow-chair', 'Sunny yellow armchair in a bright, freshly cleaned living room', { cls: 'split-photo reveal', w: 1600, h: 1067 })}
     <div class="reveal reveal-d1">
       <span class="kicker">Why the lemon?</span>
       <h2>Fresh, bright, and a little bit sunny</h2>
@@ -180,13 +180,20 @@ const notFoundContent = `
 </div></section>
 `;
 
-const bookingRedirect = (R) => `<!DOCTYPE html>
+/* /booking is a fast branded redirect to the BookingKoala form.
+   (BookingKoala sends X-Frame-Options: SAMEORIGIN, so an on-site iframe embed
+   is blocked until embedding is enabled in the BookingKoala dashboard.) */
+const bookingPage = (path) => {
+  const R = path.includes('/') ? '../' : '';
+  return {
+    path,
+    html: `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Now | LemonMaid Cleaning</title>
-  <meta name="description" content="Redirecting to LemonMaid's secure online booking form.">
+  <meta name="description" content="Book your Columbus house cleaning online in 60 seconds — instant pricing and real-time availability.">
   <meta name="robots" content="noindex">
   <link rel="canonical" href="${BIZ.booking}">
   <meta http-equiv="refresh" content="0; url=${BIZ.booking}">
@@ -196,7 +203,9 @@ const bookingRedirect = (R) => `<!DOCTYPE html>
   <p style="font-family:sans-serif;padding:2rem">Taking you to our secure booking page… <a href="${BIZ.booking}">Click here if you aren't redirected</a>.</p>
   <script>window.location.replace(${JSON.stringify(BIZ.booking)});</script>
 </body>
-</html>`;
+</html>`,
+  };
+};
 
 module.exports = [
   {
@@ -207,6 +216,7 @@ module.exports = [
       desc: 'Learn about LemonMaid Cleaning, a locally owned Columbus, Ohio house cleaning company built on trust, care, and spotless results.',
       canonical: `${BIZ.domain}/about`,
       active: 'about',
+      jsonld: [crumbsLd([['Home', 'index.html'], ['About', '']], `${BIZ.domain}/about`)],
       content: aboutContent,
     }),
   },
@@ -218,6 +228,7 @@ module.exports = [
       desc: 'Get in touch with LemonMaid Cleaning in Columbus, Ohio. Call, text, or email us. Mon-Sun 8AM-8PM.',
       canonical: `${BIZ.domain}/contact-us`,
       active: 'contact',
+      jsonld: [crumbsLd([['Home', 'index.html'], ['Contact', '']], `${BIZ.domain}/contact-us`)],
       content: contactContent,
     }),
   },
@@ -265,6 +276,6 @@ module.exports = [
       content: notFoundContent,
     }),
   },
-  { path: 'booking.html', html: bookingRedirect('') },
-  { path: 'booking/index.html', html: bookingRedirect('../') },
+  bookingPage('booking.html'),
+  bookingPage('booking/index.html'),
 ];

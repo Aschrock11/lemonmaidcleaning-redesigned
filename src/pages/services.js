@@ -1,12 +1,12 @@
 'use strict';
-const { BIZ, ICONS, ctaBanner, faqSection, faqJsonLd, pageHero, renderPage } = require('../site');
+const { BIZ, ICONS, pic, crumbsLd, ctaBanner, faqSection, faqJsonLd, pageHero, renderPage } = require('../site');
 
 /* ---------------------------------------------------------------- services */
 
 const SERVICE_ROWS = [
   {
     id: 'standard',
-    img: 'images/bright-living.jpg', alt: 'Sunlit living room kept tidy with recurring standard cleaning',
+    img: 'bright-living', alt: 'Sunlit living room kept tidy with recurring standard cleaning',
     title: 'Standard Cleaning',
     price: 'From $100',
     href: BIZ.booking, linkLabel: 'Book Standard Cleaning',
@@ -15,7 +15,7 @@ const SERVICE_ROWS = [
   },
   {
     id: 'deep',
-    img: 'images/bathroom-modern.jpg', alt: 'Gleaming glass shower and vanity after a deep cleaning',
+    img: 'bathroom-modern', alt: 'Gleaming glass shower and vanity after a deep cleaning',
     title: 'Deep Cleaning',
     price: 'From $180',
     href: 'deep-cleaning-columbus-ohio.html', linkLabel: 'See Deep Cleaning',
@@ -24,7 +24,7 @@ const SERVICE_ROWS = [
   },
   {
     id: 'moveout',
-    img: 'images/empty-room.jpg', alt: 'Empty, spotless living area ready for a final walkthrough',
+    img: 'empty-room', alt: 'Empty, spotless living area ready for a final walkthrough',
     title: 'Move-In / Move-Out Cleaning',
     price: 'From $200',
     href: 'move-out-cleaning-columbus-ohio.html', linkLabel: 'See Move-Out Cleaning',
@@ -33,7 +33,7 @@ const SERVICE_ROWS = [
   },
   {
     id: 'airbnb',
-    img: 'images/bedroom.jpg', alt: 'Guest-ready bedroom staged after a short-term rental turnover',
+    img: 'bedroom', alt: 'Guest-ready bedroom staged after a short-term rental turnover',
     title: 'Airbnb & Short-Term Rental Cleaning',
     price: 'From $80',
     href: 'airbnb-cleaning-columbus-ohio.html', linkLabel: 'See STR Cleaning',
@@ -74,7 +74,7 @@ ${pageHero('', {
 
 ${SERVICE_ROWS.map((s, i) => `<section class="section${i % 2 ? ' section-alt' : ''}" id="${s.id}"><div class="container">
   <div class="split">
-    ${i % 2 ? '' : `<img class="split-photo reveal" src="${s.img}" alt="${s.alt}" loading="lazy" width="1600" height="1360">`}
+    ${i % 2 ? '' : `${pic('', s.img, s.alt, { cls: 'split-photo reveal', w: 1600, h: 1067 })}`}
     <div class="reveal reveal-d1">
       <span class="kicker">${s.price}</span>
       <h2>${s.title}</h2>
@@ -86,7 +86,7 @@ ${SERVICE_ROWS.map((s, i) => `<section class="section${i % 2 ? ' section-alt' : 
         <a class="btn btn-primary" href="${s.href}">${s.linkLabel} ${ICONS.arrow(16)}</a>
       </div>
     </div>
-    ${i % 2 ? `<img class="split-photo reveal" src="${s.img}" alt="${s.alt}" loading="lazy" width="1600" height="1360">` : ''}
+    ${i % 2 ? `${pic('', s.img, s.alt, { cls: 'split-photo reveal', w: 1600, h: 1067 })}` : ''}
   </div>
 </div></section>`).join('\n')}
 
@@ -206,6 +206,7 @@ module.exports = [
       canonical: `${BIZ.domain}/services`,
       active: 'services',
       jsonld: [
+        crumbsLd([['Home', 'index.html'], ['Services', '']], `${BIZ.domain}/services`),
         { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'LemonMaid Cleaning', telephone: '+16147562656', address: { '@type': 'PostalAddress', addressLocality: 'Columbus', addressRegion: 'OH' } },
         faqJsonLd(SERVICES_FAQS),
       ],
@@ -220,7 +221,7 @@ module.exports = [
       desc: 'See transparent starting prices for house cleaning in Columbus, OH. Standard cleaning from $100, deep cleaning from $180. Get your exact quote online in 60 seconds.',
       canonical: `${BIZ.domain}/pricing`,
       active: 'pricing',
-      jsonld: [faqJsonLd(PRICING_FAQS)],
+      jsonld: [crumbsLd([['Home', 'index.html'], ['Pricing', '']], `${BIZ.domain}/pricing`), faqJsonLd(PRICING_FAQS)],
       content: pricingContent,
     }),
   },

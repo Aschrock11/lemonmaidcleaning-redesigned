@@ -1,5 +1,5 @@
 'use strict';
-const { BIZ, ICONS, ctaBanner, faqSection, faqJsonLd, pageHero, renderPage } = require('../site');
+const { BIZ, ICONS, pic, crumbsLd, ctaBanner, faqSection, faqJsonLd, pageHero, renderPage } = require('../site');
 
 /* Service landing pages: deep cleaning, move-out, Airbnb. */
 
@@ -39,7 +39,7 @@ ${pageHero('', {
 
 <section class="section"><div class="container">
   <div class="split">
-    <img class="split-photo reveal" src="images/bathroom-modern.jpg" alt="Modern bathroom with streak-free glass shower after a LemonMaid deep clean" loading="lazy" width="1600" height="1360">
+    ${pic('', 'bathroom-modern', 'Modern bathroom with streak-free glass shower after a LemonMaid deep clean', { cls: 'split-photo reveal', w: 1600, h: 1067 })}
     <div class="reveal reveal-d1">
       <span class="kicker">What’s included</span>
       <h2>Everything in a standard clean — plus the details</h2>
@@ -119,7 +119,7 @@ ${pageHero('', {
         <a class="btn btn-outline" href="services.html">All services</a>
       </div>
     </div>
-    <img class="split-photo reveal reveal-d1" src="images/empty-room.jpg" alt="Bright, empty living space cleaned and ready for final walkthrough" loading="lazy" width="1600" height="1360">
+    ${pic('', 'empty-room', 'Bright, empty living space cleaned and ready for final walkthrough', { cls: 'split-photo reveal reveal-d1', w: 1600, h: 1067 })}
   </div>
 </div></section>
 
@@ -168,7 +168,7 @@ ${pageHero('', {
 
 <section class="section"><div class="container">
   <div class="split">
-    <img class="split-photo reveal" src="images/bedroom.jpg" alt="Short-term rental bedroom staged hotel-perfect for the next guest" loading="lazy" width="1600" height="1360">
+    ${pic('', 'bedroom', 'Short-term rental bedroom staged hotel-perfect for the next guest', { cls: 'split-photo reveal', w: 1600, h: 1067 })}
     <div class="reveal reveal-d1">
       <span class="kicker">What’s included</span>
       <h2>Turnovers that protect your ratings</h2>
@@ -221,6 +221,7 @@ module.exports = [
       canonical: `${BIZ.domain}/deep-cleaning-columbus-ohio`,
       active: 'services',
       jsonld: [
+        crumbsLd([['Home', 'index.html'], ['Services', 'services.html'], ['Deep Cleaning', '']], `${BIZ.domain}/deep-cleaning-columbus-ohio`),
         serviceJsonLd('Deep Cleaning Service', 'Deep House Cleaning', 'Professional deep cleaning service in Columbus, Ohio including detailed top-to-bottom cleaning.', '180'),
         faqJsonLd(DEEP_FAQS),
       ],
@@ -236,6 +237,7 @@ module.exports = [
       canonical: `${BIZ.domain}/move-out-cleaning-columbus-ohio`,
       active: 'services',
       jsonld: [
+        crumbsLd([['Home', 'index.html'], ['Services', 'services.html'], ['Move-In / Move-Out', '']], `${BIZ.domain}/move-out-cleaning-columbus-ohio`),
         serviceJsonLd('Move-In/Move-Out Cleaning Service', 'Move Out House Cleaning', 'Professional move-in and move-out cleaning in Columbus, Ohio with inside-appliance and cabinet detailing.', '200'),
         faqJsonLd(MOVE_FAQS),
       ],
@@ -251,6 +253,7 @@ module.exports = [
       canonical: `${BIZ.domain}/airbnb-cleaning-columbus-ohio`,
       active: 'services',
       jsonld: [
+        crumbsLd([['Home', 'index.html'], ['Services', 'services.html'], ['Airbnb & STR Cleaning', '']], `${BIZ.domain}/airbnb-cleaning-columbus-ohio`),
         serviceJsonLd('Airbnb & Short-Term Rental Cleaning', 'Vacation Rental Cleaning', 'Turnover cleaning for Airbnb and short-term rentals in Columbus, Ohio with linen changes and restocking.', '80'),
         faqJsonLd(STR_FAQS),
       ],

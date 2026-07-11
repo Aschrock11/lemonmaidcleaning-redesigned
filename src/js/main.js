@@ -72,6 +72,15 @@
     stats.forEach(function (el) { sio.observe(el); });
   }
 
+  // Conversion events (no-op unless GA4 is configured)
+  document.addEventListener('click', function (e) {
+    if (typeof window.gtag !== 'function' || !e.target.closest) return;
+    var book = e.target.closest('a[href$="booking.html"], a[href*="bookingkoala"]');
+    if (book) window.gtag('event', 'book_now_click', { link_url: book.href });
+    var call = e.target.closest('a[href^="tel:"]');
+    if (call) window.gtag('event', 'call_click', { link_url: call.href });
+  });
+
   // Only one FAQ open at a time (per group)
   document.querySelectorAll('.faq-list').forEach(function (list) {
     list.addEventListener('toggle', function (e) {

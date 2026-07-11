@@ -1,5 +1,5 @@
 'use strict';
-const { BIZ, ICONS, ctaBanner, renderPage } = require('../site');
+const { BIZ, ICONS, pic, crumbsLd, ctaBanner, renderPage } = require('../site');
 
 /* Blog index + three articles. Content carried over from the original site,
    expanded with proper article formatting. */
@@ -10,7 +10,7 @@ const POSTS = [
     title: 'How Much Does House Cleaning Cost in Columbus, Ohio? (2026 Guide)',
     navTitle: 'How Much Does House Cleaning Cost in Columbus?',
     desc: 'A local 2026 guide to house cleaning prices in Columbus, Ohio — what standard, deep, and move-out cleans cost, and what changes your final quote.',
-    img: 'images/kitchen3.jpg',
+    img: 'kitchen3',
     imgAlt: 'Clean modern kitchen with white cabinets and stainless appliances',
     date: '2026-05-20', dateLabel: 'May 20, 2026', read: '4 min read',
     excerpt: 'Standard cleans usually run $100–$200 in Columbus. Here’s what moves your quote up or down — and how to get the best value.',
@@ -51,7 +51,7 @@ const POSTS = [
     title: 'Deep Clean vs. Standard Clean: What’s the Difference?',
     navTitle: 'Deep Clean vs. Standard Clean',
     desc: 'Standard cleaning maintains your home; deep cleaning resets it. Here’s exactly what each includes and when to choose which.',
-    img: 'images/bathroom-modern.jpg',
+    img: 'bathroom-modern',
     imgAlt: 'Sparkling modern bathroom after a professional deep clean',
     date: '2026-05-06', dateLabel: 'May 6, 2026', read: '3 min read',
     excerpt: 'Standard cleaning maintains cleanliness. Deep cleaning resets the home. Here’s how to know which one your home needs right now.',
@@ -86,7 +86,7 @@ const POSTS = [
     title: 'How to Prepare for Your First House Cleaning (Quick Checklist)',
     navTitle: 'How to Prepare for a Cleaning Service',
     desc: 'A quick 5-step checklist to get the most out of your first professional house cleaning — and the one thing you definitely don’t need to do.',
-    img: 'images/spray-yellow.jpg',
+    img: 'spray-yellow',
     imgAlt: 'Hand in rubber glove holding a yellow spray bottle on a mint background',
     date: '2026-04-22', dateLabel: 'April 22, 2026', read: '2 min read',
     excerpt: 'Five quick steps before your cleaner arrives — and no, you don’t need to clean before we get there.',
@@ -120,7 +120,7 @@ const indexContent = `
 <section class="section"><div class="container">
   <div class="grid-3">
     ${POSTS.map((p, i) => `<article class="post-card reveal reveal-d${i}">
-      <img src="../${p.img}" alt="${p.imgAlt}" loading="lazy" width="800" height="400">
+      ${pic('../', p.img, p.imgAlt, { sizes: '(max-width: 768px) 94vw, 350px', w: 800, h: 400 })}
       <div class="post-body">
         <span class="post-meta">${p.dateLabel} · ${p.read}</span>
         <h3><a href="${p.slug}.html">${p.navTitle}</a></h3>
@@ -141,13 +141,13 @@ const postPage = (p) => ({
     desc: p.desc,
     canonical: `${BIZ.domain}/blog/${p.slug}`,
     active: 'blog',
-    ogImage: `${BIZ.domain}/${p.img}`,
-    jsonld: [{
+    ogImage: `${BIZ.domain}/images/${p.img}.jpg`,
+    jsonld: [crumbsLd([['Home', 'index.html'], ['Blog', 'blog/index.html'], [p.navTitle, '']], `${BIZ.domain}/blog/${p.slug}`), {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: p.title,
       description: p.desc,
-      image: `${BIZ.domain}/${p.img}`,
+      image: `${BIZ.domain}/images/${p.img}.jpg`,
       datePublished: p.date,
       author: { '@type': 'Organization', name: 'LemonMaid Cleaning' },
       publisher: { '@type': 'Organization', name: 'LemonMaid Cleaning', logo: { '@type': 'ImageObject', url: `${BIZ.domain}/images/logo.png` } },
@@ -163,7 +163,7 @@ const postPage = (p) => ({
       <span>${ICONS.clock(15)} ${p.read}</span>
       <span>${ICONS.pin(15)} Columbus, OH</span>
     </div>
-    <img class="article-hero-img" src="../${p.img}" alt="${p.imgAlt}" width="1600" height="720">
+    ${pic('../', p.img, p.imgAlt, { cls: 'article-hero-img', sizes: '(max-width: 900px) 94vw, 760px', eager: true, w: 1600, h: 727 })}
     <div class="prose">${p.body}</div>
   </div>
 </div></section>

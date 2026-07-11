@@ -1,5 +1,5 @@
 'use strict';
-const { BIZ, CITIES, REVIEWS, ICONS, ctaBanner, faqSection, faqJsonLd, reviewCard, areaPillLinks, pageHero, renderPage } = require('../site');
+const { BIZ, CITIES, REVIEWS, ICONS, pic, crumbsLd, ctaBanner, faqSection, faqJsonLd, reviewCard, areaPillLinks, pageHero, renderPage } = require('../site');
 
 /* One local landing page per service-area city. */
 
@@ -47,10 +47,11 @@ ${pageHero('', {
 
 <section class="section section-alt"><div class="container">
   <div class="split">
-    <img class="split-photo reveal" src="images/family-living.jpg" alt="Bright family living room in ${city.name} kept spotless by LemonMaid, golden retriever relaxing on the rug" loading="lazy" width="1600" height="1360">
+    ${pic('', 'family-living', `Bright family living room in ${city.name} kept spotless by LemonMaid, golden retriever relaxing on the rug`, { cls: 'split-photo reveal', w: 1600, h: 1067 })}
     <div class="reveal reveal-d1">
       <span class="kicker">Why ${city.name} chooses LemonMaid</span>
       <h2>Your neighbors, not a franchise</h2>
+      <p>${city.blurb}</p>
       <ul class="check-list">
         ${[
           '<strong>Locally owned</strong> Columbus-area cleaning company',
@@ -99,6 +100,7 @@ ${ctaBanner('', { title: `Ready for a cleaner home in ${city.name}?`, lead: 'Boo
       canonical: `${BIZ.domain}/house-cleaning-${city.slug}-ohio`,
       active: '',
       jsonld: [
+        crumbsLd([['Home', 'index.html'], [`House Cleaning ${city.name}, OH`, '']], `${BIZ.domain}/house-cleaning-${city.slug}-ohio`),
         {
           '@context': 'https://schema.org',
           '@type': 'Service',

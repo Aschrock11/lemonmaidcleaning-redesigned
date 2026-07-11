@@ -1,5 +1,5 @@
 'use strict';
-const { BIZ, CITIES, REVIEWS, ICONS, STARS, squiggle, ctaBanner, faqSection, faqJsonLd, reviewCard, areaPillLinks, LOCAL_BUSINESS, renderPage } = require('../site');
+const { BIZ, CITIES, REVIEWS, ICONS, STARS, squiggle, pic, ctaBanner, faqSection, faqJsonLd, reviewCard, areaPillLinks, LOCAL_BUSINESS, renderPage } = require('../site');
 
 const FAQS = [
   ['How much does house cleaning cost in Columbus, Ohio?',
@@ -23,22 +23,22 @@ const marqueeItems = [
 
 const services = [
   {
-    img: 'images/bright-living.jpg', alt: 'Bright, freshly cleaned living room with sunlight streaming in',
+    img: 'bright-living', alt: 'Bright, freshly cleaned living room with sunlight streaming in',
     title: 'Standard Cleaning', price: 'From $100', href: 'services.html',
     desc: 'Recurring or one-time upkeep for kitchens, bathrooms, bedrooms, and living areas. Weekly, bi-weekly, or monthly.',
   },
   {
-    img: 'images/bathroom-modern.jpg', alt: 'Spotless modern bathroom with glass shower and clean vanity',
+    img: 'bathroom-modern', alt: 'Spotless modern bathroom with glass shower and clean vanity',
     title: 'Deep Cleaning', price: 'From $180', href: 'deep-cleaning-columbus-ohio.html',
     desc: 'A top-to-bottom reset: baseboards by hand, inside windowpanes, tile and grout detail, and more.',
   },
   {
-    img: 'images/empty-room.jpg', alt: 'Pristine, empty living space ready for move-in',
+    img: 'empty-room', alt: 'Pristine, empty living space ready for move-in',
     title: 'Move-In / Move-Out', price: 'From $200', href: 'move-out-cleaning-columbus-ohio.html',
     desc: 'Deposit-ready cleaning inside cabinets, drawers, fridge, and stove — built for smooth transitions.',
   },
   {
-    img: 'images/bedroom.jpg', alt: 'Hotel-quality bedroom staged for short-term rental guests',
+    img: 'bedroom', alt: 'Hotel-quality bedroom staged for short-term rental guests',
     title: 'Airbnb & STR Cleaning', price: 'From $80', href: 'airbnb-cleaning-columbus-ohio.html',
     desc: 'Fast, reliable turnovers with linen changes and restocking so every guest walks into a 5-star stay.',
   },
@@ -79,7 +79,7 @@ const content = `
   <div class="hero-media">
     <span class="blob blob-lemon"></span>
     <span class="blob blob-green"></span>
-    <img class="hero-photo" src="images/hero-kitchen.jpg" alt="Bright, spotless white kitchen with a bowl of fresh lemons on the counter" width="1600" height="1408" fetchpriority="high">
+    ${pic('', 'hero-kitchen', 'Bright, spotless white kitchen with a bowl of fresh lemons on the counter', { cls: 'hero-photo', sizes: '(max-width: 900px) 94vw, 44vw', eager: true, w: 1600, h: 959 })}
     <div class="float-card float-review">
       <span class="stars">${STARS}</span>
       <p>“Everything looked amazing… such a relief!”</p>
@@ -104,7 +104,7 @@ const content = `
   </div>
   <div class="grid-4">
     ${services.map((s, i) => `<article class="svc-card reveal reveal-d${i % 4}">
-      <img class="svc-photo" src="${s.img}" alt="${s.alt}" loading="lazy" width="800" height="380">
+      ${pic('', s.img, s.alt, { cls: 'svc-photo', sizes: '(max-width: 768px) 94vw, (max-width: 1080px) 44vw, 270px' })}
       <div class="svc-body">
         <h3>${s.title}</h3>
         <p>${s.desc}</p>
@@ -158,7 +158,7 @@ const content = `
 
 <section class="section section-alt"><div class="container">
   <div class="split">
-    <img class="split-photo reveal" src="images/wiping-table.jpg" alt="LemonMaid cleaner in yellow gloves detailing window shutters" loading="lazy" width="1600" height="1360">
+    ${pic('', 'wiping-table', 'LemonMaid cleaner in yellow gloves detailing window shutters', { cls: 'split-photo reveal', w: 1600, h: 1067 })}
     <div class="reveal reveal-d1">
       <span class="kicker">Our promise</span>
       <h2>The 100% happiness guarantee</h2>

@@ -11,17 +11,36 @@ const BIZ = {
   hours: 'Mon–Sun 8:00 AM–8:00 PM',
 };
 
+const SOCIALS = {
+  facebook: 'https://www.facebook.com/p/LemonMaid-Cleaning-61581493899002/',
+  instagram: 'https://www.instagram.com/LemonMaidcleaningcompany',
+  google: 'https://share.google/0XDNN2H1PFIB2DqEw',
+};
+
+/* GA4 measurement ID — set to e.g. 'G-XXXXXXXXXX' to enable analytics site-wide. */
+const GA4_ID = '';
+
 const CITIES = [
-  { slug: 'columbus', name: 'Columbus', hoods: 'German Village, the Short North, Clintonville, and Victorian Village' },
-  { slug: 'dublin', name: 'Dublin', hoods: 'Bridge Park, Muirfield Village, and Historic Dublin' },
-  { slug: 'hilliard', name: 'Hilliard', hoods: 'Old Hilliard, Ballantrae, and Heritage Preserve' },
-  { slug: 'powell', name: 'Powell', hoods: 'Golf Village, Liberty Township, and downtown Powell' },
-  { slug: 'lewis-center', name: 'Lewis Center', hoods: 'the Polaris area, Alum Creek, and the Olentangy school district' },
-  { slug: 'upper-arlington', name: 'Upper Arlington', hoods: 'Old Arlington, Kingsdale, and the Lane Avenue corridor' },
-  { slug: 'bexley', name: 'Bexley', hoods: 'Drexel, Main Street, and the Capital University area' },
-  { slug: 'gahanna', name: 'Gahanna', hoods: 'Creekside, Olde Gahanna, and the Academy Park area' },
-  { slug: 'new-albany', name: 'New Albany', hoods: 'Market Square, Fenway, and the country club communities' },
-  { slug: 'westerville', name: 'Westerville', hoods: 'Uptown Westerville, the Highlands, and the Otterbein University area' },
+  { slug: 'columbus', name: 'Columbus', hoods: 'German Village, the Short North, Clintonville, and Victorian Village',
+    blurb: 'From century-old brick homes in German Village to Short North condos and Clintonville family houses, no two Columbus cleans are alike — and we treat them that way. Older homes get careful attention on original trim and woodwork; compact condos get efficient, thorough turnarounds.' },
+  { slug: 'dublin', name: 'Dublin', hoods: 'Bridge Park, Muirfield Village, and Historic Dublin',
+    blurb: 'Between Bridge Park’s newer condos, family homes around Muirfield Village, and everything near Historic Dublin, busy schedules are the norm here. Recurring cleans that quietly happen while you’re at work or practice pickup are what we do most in Dublin.' },
+  { slug: 'hilliard', name: 'Hilliard', hoods: 'Old Hilliard, Ballantrae, and Heritage Preserve',
+    blurb: 'Hilliard’s mix of growing families in Ballantrae and Heritage Preserve and longtime residents around Old Hilliard keeps our teams busy. Kid clutter, sports gear, and pet hair are our daily bread — non-toxic products included.' },
+  { slug: 'powell', name: 'Powell', hoods: 'Golf Village, Liberty Township, and downtown Powell',
+    blurb: 'Homes around Golf Village, Liberty Township, and downtown Powell tend to be newer and generously sized — which means more square footage than one weekend can handle. Recurring service keeps big homes consistently guest-ready.' },
+  { slug: 'lewis-center', name: 'Lewis Center', hoods: 'the Polaris area, Alum Creek, and the Olentangy school district',
+    blurb: 'New construction around Polaris and Alum Creek fills with builder dust faster than most owners expect. Our move-in and deep cleans give brand-new Lewis Center homes their first real clean — and recurring visits keep pace with busy Olentangy-district family life.' },
+  { slug: 'upper-arlington', name: 'Upper Arlington', hoods: 'Old Arlington, Kingsdale, and the Lane Avenue corridor',
+    blurb: 'Upper Arlington’s tree-lined streets mean established homes with real character — original hardwood, built-ins, and trim that deserve careful hands. Detail work is exactly what our deep cleans were built for.' },
+  { slug: 'bexley', name: 'Bexley', hoods: 'Drexel, Main Street, and the Capital University area',
+    blurb: 'Bexley’s historic homes near Drexel and Capital University reward detail: baseboards, radiators, stair spindles, and built-in shelving. We clean them the way they were meant to be kept.' },
+  { slug: 'gahanna', name: 'Gahanna', hoods: 'Creekside, Olde Gahanna, and the Academy Park area',
+    blurb: 'From Creekside condos to family homes in Olde Gahanna and Academy Park, we help Gahanna households stay company-ready year-round — including quick resets before Creekside evenings out.' },
+  { slug: 'new-albany', name: 'New Albany', hoods: 'Market Square, Fenway, and the country club communities',
+    blurb: 'Larger homes around Market Square and the country club communities take real time to clean well. Our teams are used to New Albany’s square footage — and to the standard its homeowners expect.' },
+  { slug: 'westerville', name: 'Westerville', hoods: 'Uptown Westerville, the Highlands, and the Otterbein University area',
+    blurb: 'Uptown charmers, Highlands family homes, and rentals near Otterbein — Westerville keeps us moving. Same-week slots are usually available, and our turnover cleans are popular with local landlords between tenants.' },
 ];
 
 const REVIEWS = [
@@ -58,6 +77,9 @@ const ICONS = {
   calendar: (s) => I('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/>', { size: s }),
   leaf: (s) => I('<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>', { size: s }),
   medal: (s) => I('<circle cx="12" cy="9" r="6"/><path d="M9 14.5 7 22l5-3 5 3-2-7.5"/><path d="m9.5 9 1.7 1.7L14.5 7.4"/>', { size: s }),
+  facebook: (s) => I('<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor" stroke="none"/>', { size: s, fill: 'currentColor' }),
+  instagram: (s) => I('<rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>', { size: s }),
+  googleg: (s) => I('<path d="M21.35 11.1H12v3.9h5.4A5.6 5.6 0 0 1 6.4 12 5.6 5.6 0 0 1 12 6.4c1.4 0 2.7.5 3.7 1.4l2.8-2.8A9.4 9.4 0 0 0 12 2.5a9.5 9.5 0 1 0 9.35 8.6z" fill="currentColor" stroke="none"/>', { size: s, fill: 'currentColor' }),
   home: (s) => I('<path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><polyline points="9 22 9 14 15 14 15 22"/>', { size: s }),
   sparkle: (s) => I('<path d="M12 2l2.1 6.9L21 11l-6.9 2.1L12 20l-2.1-6.9L3 11l6.9-2.1L12 2z" fill="currentColor" stroke="none"/>', { size: s, fill: 'currentColor' }),
   key: (s) => I('<circle cx="7.5" cy="15.5" r="4.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>', { size: s }),
@@ -67,6 +89,26 @@ const ICONS = {
 
 const STARS = '★★★★★';
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+/* Responsive image: WebP srcset from the pre-generated 480/960/1600 variants.
+   opts: cls, sizes, eager (skip lazy), w/h (intrinsic ratio hints) */
+const pic = (R, name, alt, opts = {}) => {
+  const sizes = opts.sizes || '(max-width: 900px) 94vw, 46vw';
+  const srcset = [480, 960, 1600].map((w) => `${R}images/${name}-${w}.webp ${w}w`).join(', ');
+  return `<img${opts.cls ? ` class="${opts.cls}"` : ''} src="${R}images/${name}-960.webp" srcset="${srcset}" sizes="${sizes}" alt="${esc(alt)}"${opts.w ? ` width="${opts.w}" height="${opts.h}"` : ''}${opts.eager ? ' fetchpriority="high"' : ' loading="lazy"'}>`;
+};
+
+/* BreadcrumbList JSON-LD from [label, href] pairs (last item = current page). */
+const crumbsLd = (crumbs, canonical) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c[0].replace(/<[^>]+>/g, ''),
+    item: i === crumbs.length - 1 ? canonical : `${BIZ.domain}/${c[1].replace(/^\.\.\//, '').replace(/index\.html$/, '').replace(/\.html$/, '')}`.replace(/\/$/, '') || BIZ.domain,
+  })),
+});
 
 /* Lemon squiggle underline for hero words */
 const squiggle = (word) =>
@@ -117,6 +159,11 @@ function footer(R) {
       <div>
         <a class="f-logo" href="${R}index.html"><img src="${R}images/logo.png" alt="LemonMaid Cleaning logo" width="120" height="120"></a>
         <p>Columbus’s trusted house cleaning service. Locally owned, fully insured, and obsessed with the details — so you can get your weekends back.</p>
+        <div class="f-social">
+          <a href="${SOCIALS.facebook}" aria-label="LemonMaid Cleaning on Facebook" rel="noopener">${ICONS.facebook(18)}</a>
+          <a href="${SOCIALS.instagram}" aria-label="LemonMaid Cleaning on Instagram" rel="noopener">${ICONS.instagram(18)}</a>
+          <a href="${SOCIALS.google}" aria-label="LemonMaid Cleaning on Google" rel="noopener">${ICONS.googleg(18)}</a>
+        </div>
       </div>
       <div>
         <h3>Explore</h3>
@@ -246,6 +293,7 @@ const LOCAL_BUSINESS = {
   image: 'https://www.lemonmaidcleaning.com/images/logo.png',
   '@id': 'https://www.lemonmaidcleaning.com',
   url: 'https://www.lemonmaidcleaning.com',
+  sameAs: [SOCIALS.facebook, SOCIALS.instagram, SOCIALS.google],
   telephone: '+16147562656',
   email: 'support@lemonmaidcleaning.com',
   address: { '@type': 'PostalAddress', addressLocality: 'Columbus', addressRegion: 'OH', postalCode: '43215', addressCountry: 'US' },
@@ -270,6 +318,9 @@ function renderPage(opts) {
   const R = '../'.repeat(depth);
   const jsonld = (opts.jsonld || []).map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n  ');
   const ogImage = opts.ogImage || `${BIZ.domain}/images/hero-kitchen.jpg`;
+  const analytics = GA4_ID ? `
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA4_ID}');</script>` : '';
   const bodyClass = opts.bodyClass ? ` class="${opts.bodyClass}"` : '';
   return `<!DOCTYPE html>
 <html lang="en">
@@ -293,7 +344,7 @@ function renderPage(opts) {
   <link rel="icon" href="${R}favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="${R}favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="${R}favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="${R}apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="${R}apple-touch-icon.png">${analytics}
   ${jsonld}
 </head>
 <body${bodyClass}>
@@ -310,7 +361,7 @@ ${footer(R)}
 }
 
 module.exports = {
-  BIZ, CITIES, REVIEWS, ICONS, STARS, esc, squiggle,
+  BIZ, SOCIALS, CITIES, REVIEWS, ICONS, STARS, esc, squiggle, pic, crumbsLd,
   ctaBanner, faqSection, faqJsonLd, reviewCard, checkItem,
   areaPillLinks, pageHero, LOCAL_BUSINESS, renderPage,
 };

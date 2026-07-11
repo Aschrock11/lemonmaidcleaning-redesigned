@@ -648,6 +648,16 @@ ul { padding-left: 1.2em; }
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
 .site-footer .f-logo img { height: 64px; width: auto; margin-bottom: 16px; background: #fff; border-radius: 14px; padding: 6px; }
+.f-social { display: flex; gap: 12px; margin-top: 18px; }
+.f-social a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  display: grid; place-items: center;
+  color: #CBE2D5;
+  transition: all .18s ease;
+}
+.f-social a:hover { background: var(--lemon); border-color: var(--lemon); color: var(--green-900); transform: translateY(-2px); }
 .site-footer h3 {
   color: #fff;
   font-family: var(--font-text);
