@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" role="img" aria-label="Lemon Maid Cleaning logo">
+  <defs>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#004d2a"/>
+      <stop offset="100%" stop-color="#006837"/>
+    </linearGradient>
+    <linearGradient id="gLemon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe100"/>
+      <stop offset="100%" stop-color="#ffd400"/>
+    </linearGradient>
+  </defs>
+
+  <path fill="url(#gGreen)" d="M125 195c66-117 193-111 242-52-42 70-127 100-245 52 1 0 2 0 3 0z"/>
+  <path fill="url(#gGreen)" d="M356 165c2-47 17-83 28-112 11-11 22-10 33-2-18 33-28 73-30 124z"/>
+
+  <path fill="url(#gLemon)" d="M384 160c45 0 64 31 96 46 41 20 74 26 95 73 16 36 26 81 26 124 0 89-43 173-132 216-18 9-24 16-31 30-8 17-24 29-54 29-29 0-45-12-53-29-7-14-13-21-31-30-89-43-132-127-132-216 0-43 10-88 26-124 21-47 54-53 95-73 32-15 51-46 95-46z"/>
+
+  <g fill="url(#gGreen)" font-family="Arial Black, Arial, sans-serif" text-anchor="middle" letter-spacing="1">
+    <text x="384" y="342" font-size="145" font-weight="900">LEMON</text>
+    <text x="384" y="472" font-size="145" font-weight="900">MAID</text>
+    <text x="384" y="534" font-size="74" font-weight="900">CLEANING</text>
+  </g>
+
+  <g transform="translate(534 518)">
+    <path fill="url(#gGreen)" d="M0 8c12-8 38-8 54-8 17 0 39-1 52 8 8 6 13 11 18 18-7 3-15 3-23 3l-8 13c-5 8-11 13-19 16l-6 2v81c0 13-9 20-21 20H21c-12 0-21-7-21-20V81c0-7 2-12 6-17l25-31c-13-1-23-3-31-7C5 20 11 13 0 8z"/>
+  </g>
+</svg>
