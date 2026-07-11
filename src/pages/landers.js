@@ -115,7 +115,7 @@ ${pageHero('', {
         '<strong>Flexible same-week scheduling</strong> around your closing or lease dates',
       ])}
       <div class="cta-row">
-        <a class="btn btn-primary" href="${BIZ.booking}">Book Move-Out Cleaning ${ICONS.arrow(16)}</a>
+        <a class="btn btn-primary" href="booking.html">Book Move-Out Cleaning ${ICONS.arrow(16)}</a>
         <a class="btn btn-outline" href="services.html">All services</a>
       </div>
     </div>
@@ -180,7 +180,7 @@ ${pageHero('', {
         '<strong>Reliable communication</strong> — you’ll know when the unit is guest-ready',
       ])}
       <div class="cta-row">
-        <a class="btn btn-primary" href="${BIZ.booking}">Book STR Cleaning ${ICONS.arrow(16)}</a>
+        <a class="btn btn-primary" href="booking.html">Book STR Cleaning ${ICONS.arrow(16)}</a>
         <a class="btn btn-outline" href="${BIZ.phoneHref}">${ICONS.phone(16)} Talk turnovers with us</a>
       </div>
     </div>

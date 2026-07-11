@@ -902,6 +902,19 @@ textarea { resize: vertical; }
 .contact-info-card .ci-row span.val { font-size: .98rem; }
 
 /* --------------------------------------------------------------------------
+   Booking embed
+   -------------------------------------------------------------------------- */
+.booking-embed {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(10, 61, 40, 0.07);
+  overflow: hidden;
+  padding: 10px;
+}
+.booking-embed iframe { display: block; width: 100%; }
+
+/* --------------------------------------------------------------------------
    Utility + reveal animation
    -------------------------------------------------------------------------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }

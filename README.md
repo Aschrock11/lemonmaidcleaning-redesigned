@@ -44,9 +44,9 @@ cd docs && python3 -m http.server 8471
 - Every page carries JSON-LD: LocalBusiness (with `sameAs` social links), Service, FAQPage,
   BreadcrumbList, and BlogPosting where relevant.
 - Images ship as 480/960/1600w WebP with `srcset` (~80% smaller than the originals).
-- The `/booking` URLs redirect to BookingKoala. An on-site embed is currently blocked by
-  BookingKoala's `X-Frame-Options: SAMEORIGIN` — if embedding is enabled in the BookingKoala
-  dashboard (widget/embed settings), the booking page can be switched to an inline form.
+- The `/booking` page embeds the BookingKoala form on-site (official embed snippet with
+  their auto-resizer script); all Book Now CTAs point there so the funnel stays on-domain.
+  A "open in new window" fallback link sits below the form.
 
 ## Design system
 

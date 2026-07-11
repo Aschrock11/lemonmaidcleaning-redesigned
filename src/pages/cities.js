@@ -62,7 +62,7 @@ ${pageHero('', {
         ].map((t) => `<li><span class="chk">${ICONS.check(13)}</span><span>${t}</span></li>`).join('\n        ')}
       </ul>
       <div class="cta-row">
-        <a class="btn btn-primary" href="${BIZ.booking}">Book a Clean in ${city.name} ${ICONS.arrow(16)}</a>
+        <a class="btn btn-primary" href="booking.html">Book a Clean in ${city.name} ${ICONS.arrow(16)}</a>
       </div>
     </div>
   </div>

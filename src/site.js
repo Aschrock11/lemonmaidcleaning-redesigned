@@ -140,12 +140,12 @@ function header(R, active) {
   return `<header class="site-header"><div class="container nav-wrap">
     <a class="logo" href="${R}index.html"><img src="${R}images/logo.png" alt="LemonMaid Cleaning logo" width="120" height="120"></a>
     <nav class="nav-links" aria-label="Main navigation">${links}
-      <a class="btn btn-primary nav-book-mobile" href="${BIZ.booking}">Book Now ${ICONS.arrow(16)}</a>
+      <a class="btn btn-primary nav-book-mobile" href="${R}booking.html">Book Now ${ICONS.arrow(16)}</a>
       <a class="nav-phone" href="${BIZ.phoneHref}">${ICONS.phone(16)} ${BIZ.phone}</a>
     </nav>
     <div class="nav-actions">
       <a class="nav-phone" href="${BIZ.phoneHref}">${ICONS.phone(17)} <span>${BIZ.phone}</span></a>
-      <a class="btn btn-primary" href="${BIZ.booking}">Book Now</a>
+      <a class="btn btn-primary" href="${R}booking.html">Book Now</a>
     </div>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </div></header>`;
@@ -174,7 +174,7 @@ function footer(R) {
           <a href="${R}about.html">About</a>
           <a href="${R}blog/index.html">Blog</a>
           <a href="${R}contact-us.html">Contact</a>
-          <a href="${BIZ.booking}">Book Now</a>
+          <a href="${R}booking.html">Book Now</a>
         </div>
       </div>
       <div>
@@ -205,7 +205,7 @@ function footer(R) {
   </div></footer>
   <div class="mobile-cta">
     <a class="btn btn-outline" href="${BIZ.phoneHref}">${ICONS.phone(16)} Call</a>
-    <a class="btn btn-primary" href="${BIZ.booking}">Book Now</a>
+    <a class="btn btn-primary" href="${R}booking.html">Book Now</a>
   </div>`;
 }
 
@@ -219,7 +219,7 @@ function ctaBanner(R, opts = {}) {
       <h2>${title}</h2>
       <p class="lead">${lead}</p>
       <div class="cta-row">
-        <a class="btn btn-primary btn-lg" href="${BIZ.booking}">${ICONS.sparkle(18)} Book My Cleaning</a>
+        <a class="btn btn-primary btn-lg" href="${R}booking.html">${ICONS.sparkle(18)} Book My Cleaning</a>
         <a class="btn btn-lg" style="border-color:#fff;color:#fff" href="${BIZ.phoneHref}">${ICONS.phone(18)} ${BIZ.phone}</a>
       </div>
       <p class="cta-note">Free rescheduling with 24-hour notice · No contracts, ever</p>
@@ -279,7 +279,7 @@ function pageHero(R, opts) {
     <h1>${opts.h1}</h1>
     ${opts.lead ? `<p class="lead">${opts.lead}</p>` : ''}
     ${opts.cta === false ? '' : `<div class="cta-row">
-      <a class="btn btn-primary btn-lg" href="${BIZ.booking}">${ICONS.sparkle(18)} ${opts.ctaLabel || 'Get an Instant Quote'}</a>
+      <a class="btn btn-primary btn-lg" href="${R}booking.html">${ICONS.sparkle(18)} ${opts.ctaLabel || 'Get an Instant Quote'}</a>
       <a class="btn btn-outline btn-lg" href="${BIZ.phoneHref}">${ICONS.phone(18)} Call/text ${BIZ.phone}</a>
     </div>`}
   </div></section>`;

@@ -43,7 +43,7 @@ const POSTS = [
         <li><strong>Compare insured, local companies</strong> — not just the lowest number. A cheap uninsured clean can cost far more than it saves.</li>
       </ul>
 
-      <div class="callout"><p><strong>Want your exact number?</strong> LemonMaid quotes are instant — answer a few questions about your home and see your price in about 60 seconds. <a href="${BIZ.booking}">Get your exact quote</a>.</p></div>
+      <div class="callout"><p><strong>Want your exact number?</strong> LemonMaid quotes are instant — answer a few questions about your home and see your price in about 60 seconds. <a href="../booking.html">Get your exact quote</a>.</p></div>
     `,
   },
   {
@@ -78,7 +78,7 @@ const POSTS = [
         <li><strong>Moving</strong> — in or out</li>
         <li><strong>Long gaps</strong> between professional cleanings</li>
       </ul>
-      <p>Still unsure? The rule of thumb we give Columbus customers: if it’s been more than a couple of months since a professional clean, start deep. <a href="../deep-cleaning-columbus-ohio.html">See what’s in our deep clean</a> or <a href="${BIZ.booking}">book one online</a>.</p>
+      <p>Still unsure? The rule of thumb we give Columbus customers: if it’s been more than a couple of months since a professional clean, start deep. <a href="../deep-cleaning-columbus-ohio.html">See what’s in our deep clean</a> or <a href="../booking.html">book one online</a>.</p>
     `,
   },
   {
@@ -104,7 +104,7 @@ const POSTS = [
 
       <div class="callout"><p><strong>And the big one:</strong> no, you do <em>not</em> need to clean before the cleaner comes. Just clear the surfaces so we can focus on the details you hired us for.</p></div>
 
-      <p>Ready when you are — <a href="${BIZ.booking}">book your Columbus cleaning</a> in about 60 seconds, or read about <a href="../deep-cleaning-columbus-ohio.html">what’s in a deep clean</a> if it’s your first professional visit.</p>
+      <p>Ready when you are — <a href="../booking.html">book your Columbus cleaning</a> in about 60 seconds, or read about <a href="../deep-cleaning-columbus-ohio.html">what’s in a deep clean</a> if it’s your first professional visit.</p>
     `,
   },
 ];

@@ -13,7 +13,7 @@ const FAQS = [
   ['Do I need to be home during the cleaning?',
     'Totally up to you. Many customers simply leave entry instructions when they book — a door code, lockbox, or a key with a neighbor all work great.'],
   ['How do I book a cleaning?',
-    `Book online in about 60 seconds at <a href="${BIZ.booking}">our booking page</a>, or call/text <a href="${BIZ.phoneHref}">${BIZ.phone}</a> and we’ll set everything up for you.`],
+    `Book online in about 60 seconds at <a href="booking.html">our booking page</a>, or call/text <a href="${BIZ.phoneHref}">${BIZ.phone}</a> and we’ll set everything up for you.`],
 ];
 
 const marqueeItems = [
@@ -66,7 +66,7 @@ const content = `
     <h1>House cleaning in Columbus that feels like ${squiggle('sunshine')}</h1>
     <p class="hero-sub">Background-checked, insured cleaners who treat your home like their own. Book online in 60 seconds — satisfaction guaranteed, or your money back.</p>
     <div class="cta-row">
-      <a class="btn btn-primary btn-lg" href="${BIZ.booking}">${ICONS.sparkle(18)} Get an Instant Quote</a>
+      <a class="btn btn-primary btn-lg" href="booking.html">${ICONS.sparkle(18)} Get an Instant Quote</a>
       <a class="btn btn-outline btn-lg" href="${BIZ.phoneHref}">${ICONS.phone(18)} ${BIZ.phone}</a>
     </div>
     <div class="trust-row">
@@ -153,7 +153,7 @@ const content = `
       <p>${s.desc}</p>
     </div>`).join('\n    ')}
   </div>
-  <p class="center mt-56"><a class="btn btn-primary btn-lg" href="${BIZ.booking}">${ICONS.sparkle(18)} Book Your Clean Now</a></p>
+  <p class="center mt-56"><a class="btn btn-primary btn-lg" href="booking.html">${ICONS.sparkle(18)} Book Your Clean Now</a></p>
 </div></section>
 
 <section class="section section-alt"><div class="container">

@@ -9,7 +9,7 @@ const SERVICE_ROWS = [
     img: 'bright-living', alt: 'Sunlit living room kept tidy with recurring standard cleaning',
     title: 'Standard Cleaning',
     price: 'From $100',
-    href: BIZ.booking, linkLabel: 'Book Standard Cleaning',
+    href: 'booking.html', linkLabel: 'Book Standard Cleaning',
     desc: 'The clean that keeps your home feeling handled, week after week. Perfect as recurring service (weekly, bi-weekly, or monthly) or a one-time refresh.',
     includes: ['Dusting, vacuuming, and mopping throughout', 'Kitchen counters, sink, and appliance exteriors', 'Bathroom sanitizing — toilets, tubs, showers, and sinks', 'Ceiling fans, light fixtures, and general surface dusting', 'Trash emptied and beds tidied'],
   },
@@ -169,7 +169,7 @@ ${pageHero('', {
       <ul class="check-list">
         ${c.perks.map((t) => `<li><span class="chk">${ICONS.check(12)}</span><span>${t}</span></li>`).join('\n        ')}
       </ul>
-      <a class="btn ${c.popular ? 'btn-primary' : 'btn-outline'}" href="${BIZ.booking}">Get My Quote</a>
+      <a class="btn ${c.popular ? 'btn-primary' : 'btn-outline'}" href="booking.html">Get My Quote</a>
     </article>`).join('\n    ')}
   </div>
 </div></section>

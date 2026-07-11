@@ -20,7 +20,7 @@ ${pageHero('', {
       <p>A clean home changes how the whole week feels. That’s the feeling we’re named after — walking into a space that smells fresh, looks bright, and lets you exhale.</p>
       <p>We’re locally owned and operated, not a franchise. The people cleaning your home are background-checked, trained, and insured — and the people answering the phone are your Columbus neighbors.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="${BIZ.booking}">${ICONS.sparkle(17)} Book with LemonMaid</a>
+        <a class="btn btn-primary" href="booking.html">${ICONS.sparkle(17)} Book with LemonMaid</a>
         <a class="btn btn-outline" href="contact-us.html">Say hello</a>
       </div>
     </div>
@@ -114,7 +114,7 @@ ${pageHero('', {
       <div class="map-panel reveal reveal-d2">
         <iframe title="Map of the LemonMaid Cleaning service area in Columbus, Ohio" src="https://maps.google.com/maps?q=Columbus%2C%20OH&t=&z=10&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
-      <p class="small muted mb-0" style="padding:0 6px">Serving Columbus, Dublin, Westerville, Hilliard, Gahanna, New Albany, and nearby suburbs. Prefer to skip the form? <a href="${BIZ.booking}">Book directly online</a>.</p>
+      <p class="small muted mb-0" style="padding:0 6px">Serving Columbus, Dublin, Westerville, Hilliard, Gahanna, New Albany, and nearby suburbs. Prefer to skip the form? <a href="booking.html">Book directly online</a>.</p>
     </div>
   </div>
 </div></section>
@@ -162,7 +162,7 @@ const thankYouContent = `
   <h1>Thanks — we got your message!</h1>
   <p class="lead">We’ll be in touch within one business hour. Need an answer right now? Call or text <a href="${BIZ.phoneHref}">${BIZ.phone}</a> for the fastest response.</p>
   <div class="cta-row" style="justify-content:center;margin-top:26px">
-    <a class="btn btn-primary btn-lg" href="${BIZ.booking}">${ICONS.sparkle(18)} Book a Cleaning</a>
+    <a class="btn btn-primary btn-lg" href="booking.html">${ICONS.sparkle(18)} Book a Cleaning</a>
     <a class="btn btn-outline btn-lg" href="index.html">Back to Home</a>
   </div>
 </div></section>
@@ -175,37 +175,41 @@ const notFoundContent = `
   <p class="lead">The page you’re looking for isn’t here. Let’s get you back to somewhere spotless.</p>
   <div class="cta-row" style="justify-content:center;margin-top:26px">
     <a class="btn btn-primary btn-lg" href="index.html">Back to Home</a>
-    <a class="btn btn-outline btn-lg" href="${BIZ.booking}">Book a Clean</a>
+    <a class="btn btn-outline btn-lg" href="booking.html">Book a Clean</a>
   </div>
 </div></section>
 `;
 
-/* /booking is a fast branded redirect to the BookingKoala form.
-   (BookingKoala sends X-Frame-Options: SAMEORIGIN, so an on-site iframe embed
-   is blocked until embedding is enabled in the BookingKoala dashboard.) */
-const bookingPage = (path) => {
-  const R = path.includes('/') ? '../' : '';
-  return {
+/* /booking embeds the BookingKoala form on-site using their official embed
+   snippet (iframe + resources/embed.js auto-resizer). */
+const bookingContent = (R) => `
+<section class="page-hero" style="padding-bottom:40px"><div class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${R}index.html">Home</a><span class="sep">/</span><span aria-current="page">Book Now</span></nav>
+  <span class="kicker">Instant online booking</span>
+  <h1>Book your cleaning in 60 seconds</h1>
+  <p class="lead">Pick your service, see your exact price, and choose a time — all right here. Prefer a human? Call/text <a href="${BIZ.phoneHref}">${BIZ.phone}</a>.</p>
+</div></section>
+
+<section class="section" style="padding-top:44px"><div class="container">
+  <div class="booking-embed">
+    <iframe src="${BIZ.booking}" title="LemonMaid Cleaning online booking form" style="border:none;height:1000px" width="100%" scrolling="no"></iframe>
+  </div>
+  <script src="https://lemonmaidcleaning.bookingkoala.com/resources/embed.js" defer></script>
+  <p class="center small muted mt-40">Form not loading? <a href="${BIZ.booking}" rel="noopener">Open the booking form in a new window</a> — or call/text <a href="${BIZ.phoneHref}">${BIZ.phone}</a> and we’ll book you in.</p>
+</div></section>
+`;
+
+const bookingPage = (path) => ({
+  path,
+  html: renderPage({
     path,
-    html: `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Now | LemonMaid Cleaning</title>
-  <meta name="description" content="Book your Columbus house cleaning online in 60 seconds — instant pricing and real-time availability.">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="${BIZ.booking}">
-  <meta http-equiv="refresh" content="0; url=${BIZ.booking}">
-  <link rel="icon" href="${R}favicon.ico" sizes="any">
-</head>
-<body>
-  <p style="font-family:sans-serif;padding:2rem">Taking you to our secure booking page… <a href="${BIZ.booking}">Click here if you aren't redirected</a>.</p>
-  <script>window.location.replace(${JSON.stringify(BIZ.booking)});</script>
-</body>
-</html>`,
-  };
-};
+    title: 'Book House Cleaning Online | LemonMaid Cleaning Columbus OH',
+    desc: 'Book your Columbus house cleaning online in 60 seconds — instant pricing, real-time availability, and a 100% satisfaction guarantee.',
+    canonical: `${BIZ.domain}/booking`,
+    active: '',
+    content: bookingContent(path.includes('/') ? '../' : ''),
+  }),
+});
 
 module.exports = [
   {
