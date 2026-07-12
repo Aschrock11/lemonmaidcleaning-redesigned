@@ -55,15 +55,14 @@ cd docs && python3 -m http.server 8471
 - **Components:** sticky glass header, hero with floating review cards, badge marquee, stats band with
   count-up, FAQ accordions, pricing cards, comparison tables, review cards, area pills + map
 
-## Cutover checklist (when ready to go live)
+## Hosting (live since 2026-07-11)
 
-1. Enable GitHub Pages on this repo: **Settings → Pages → main branch, `/docs` folder**.
-2. Verify everything on the `*.github.io` preview URL.
-3. Remove the custom domain from the old `lemonmaid-site` repo.
-4. Add `www.lemonmaidcleaning.com` as the custom domain here (this writes the `CNAME` file into `docs/`).
-5. Done — DNS already points at GitHub Pages.
+This repo serves **www.lemonmaidcleaning.com** via GitHub Pages. The build writes `docs/CNAME`;
+a `gh-pages` branch mirrors `docs/` as a fallback publish source. The old `lemonmaid-site` repo
+released the domain and keeps the previous site in its history.
 
-> `CNAME` is intentionally not committed yet: two GitHub Pages repos can't claim the same domain at once.
+To update the site: edit `src/`, run `node build.js`, commit and push `main`
+(and sync `gh-pages` if that's the active Pages source).
 
 ## Image credits
 
