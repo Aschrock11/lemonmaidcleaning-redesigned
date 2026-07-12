@@ -99,7 +99,6 @@ fs.writeFileSync(path.join(OUT, 'llms.txt'), `# LemonMaid Cleaning
 - Contact: ${BIZ.domain}/contact-us
 `);
 
-/* NOTE: CNAME (www.lemonmaidcleaning.com) is intentionally NOT written here.
-   Add it at cutover time — two GitHub Pages repos can't claim the same domain. */
+fs.writeFileSync(path.join(OUT, 'CNAME'), 'www.lemonmaidcleaning.com\n');
 
 console.log(`Built ${pages.length} pages → docs/`);
