@@ -3,7 +3,7 @@ const { BIZ, CITIES, REVIEWS, ICONS, STARS, squiggle, pic, ctaBanner, faqSection
 
 const FAQS = [
   ['How much does house cleaning cost in Columbus, Ohio?',
-    `Standard cleaning for a 2-bedroom home in Columbus typically ranges from $120–$200. Deep cleaning starts at $180–$280 depending on home size and condition. See our <a href="pricing.html">pricing page</a> for starting rates, or get your exact quote online in 60 seconds.`],
+    `Standard cleaning for a 2-bedroom home in Columbus typically ranges from $200–$300. Deep cleaning starts at $280–$420 depending on home size and condition. See our <a href="pricing.html">pricing page</a> for starting rates, or get your exact quote online in 60 seconds.`],
   ['Do you bring your own supplies?',
     'Yes. We bring all supplies and equipment to every visit, and we use eco-friendly, non-toxic products that are safe for kids, pets, and the planet.'],
   ['Are your cleaners background-checked?',
@@ -24,22 +24,22 @@ const marqueeItems = [
 const services = [
   {
     img: 'bright-living', alt: 'Bright, freshly cleaned living room with sunlight streaming in',
-    title: 'Standard Cleaning', price: 'From $100', href: 'services.html',
+    title: 'Standard Cleaning', price: 'From $150', href: 'services.html',
     desc: 'Recurring or one-time upkeep for kitchens, bathrooms, bedrooms, and living areas. Weekly, bi-weekly, or monthly.',
   },
   {
     img: 'bathroom-modern', alt: 'Spotless modern bathroom with glass shower and clean vanity',
-    title: 'Deep Cleaning', price: 'From $180', href: 'deep-cleaning-columbus-ohio.html',
+    title: 'Deep Cleaning', price: 'From $280', href: 'deep-cleaning-columbus-ohio.html',
     desc: 'A top-to-bottom reset: baseboards by hand, inside windowpanes, tile and grout detail, and more.',
   },
   {
     img: 'empty-room', alt: 'Pristine, empty living space ready for move-in',
-    title: 'Move-In / Move-Out', price: 'From $200', href: 'move-out-cleaning-columbus-ohio.html',
+    title: 'Move-In / Move-Out', price: 'From $300', href: 'move-out-cleaning-columbus-ohio.html',
     desc: 'Deposit-ready cleaning inside cabinets, drawers, fridge, and stove — built for smooth transitions.',
   },
   {
     img: 'bedroom', alt: 'Hotel-quality bedroom staged for short-term rental guests',
-    title: 'Airbnb & STR Cleaning', price: 'From $80', href: 'airbnb-cleaning-columbus-ohio.html',
+    title: 'Airbnb & STR Cleaning', price: 'From $120', href: 'airbnb-cleaning-columbus-ohio.html',
     desc: 'Fast, reliable turnovers with linen changes and restocking so every guest walks into a 5-star stay.',
   },
 ];

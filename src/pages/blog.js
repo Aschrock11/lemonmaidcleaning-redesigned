@@ -13,9 +13,9 @@ const POSTS = [
     img: 'kitchen3',
     imgAlt: 'Clean modern kitchen with white cabinets and stainless appliances',
     date: '2026-05-20', dateLabel: 'May 20, 2026', read: '4 min read',
-    excerpt: 'Standard cleans usually run $100–$200 in Columbus. Here’s what moves your quote up or down — and how to get the best value.',
+    excerpt: 'Standard cleans usually run $150–$300 in Columbus. Here’s what moves your quote up or down — and how to get the best value.',
     body: `
-      <div class="callout"><p><strong>Quick answer:</strong> Standard house cleaning in Columbus usually costs <strong>$100–$200</strong>. Deep cleaning typically starts at <strong>$180–$280</strong> based on size and condition.</p></div>
+      <div class="callout"><p><strong>Quick answer:</strong> Standard house cleaning in Columbus usually costs <strong>$150–$300</strong>. Deep cleaning typically starts at <strong>$180–$280</strong> based on size and condition.</p></div>
 
       <h2>What affects cleaning prices?</h2>
       <p>Cleaning quotes aren’t arbitrary — they reflect how long your home will genuinely take to clean well. The biggest factors:</p>
@@ -29,10 +29,10 @@ const POSTS = [
 
       <h2>Typical Columbus price ranges</h2>
       <ul>
-        <li><strong>Standard cleaning:</strong> $100–$200</li>
-        <li><strong>Deep cleaning:</strong> $180–$280+</li>
-        <li><strong>Move-out cleaning:</strong> $200–$350+</li>
-        <li><strong>Airbnb turnover:</strong> $80–$150+</li>
+        <li><strong>Standard cleaning:</strong> $150–$300</li>
+        <li><strong>Deep cleaning:</strong> $280–$420+</li>
+        <li><strong>Move-out cleaning:</strong> $300–$500+</li>
+        <li><strong>Airbnb turnover:</strong> $120–$230+</li>
       </ul>
       <p>You can see LemonMaid’s starting rates by home size on our <a href="../pricing.html">pricing page</a>.</p>
 

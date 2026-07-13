@@ -7,7 +7,7 @@ const cityPage = (city, idx) => {
   const review = REVIEWS[idx % REVIEWS.length];
   const faqs = [
     [`How much does house cleaning cost in ${city.name}?`,
-      `Standard cleaning for a 2-bedroom home typically ranges from $120–$200, and deep cleaning starts at $180–$280 depending on size and condition. Get your exact ${city.name} quote online in 60 seconds — no in-home estimate needed.`],
+      `Standard cleaning for a 2-bedroom home typically ranges from $200–$300, and deep cleaning starts at $280–$420 depending on size and condition. Get your exact ${city.name} quote online in 60 seconds — no in-home estimate needed.`],
     [`How soon can you clean my home in ${city.name}?`,
       `We offer same-week availability across ${city.name} and the Columbus metro, seven days a week from 8 AM to 8 PM. Book online or call/text ${BIZ.phone}.`],
     [`Are your cleaners background-checked and insured?`,

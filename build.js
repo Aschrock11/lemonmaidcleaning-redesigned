@@ -80,10 +80,10 @@ fs.writeFileSync(path.join(OUT, 'llms.txt'), `# LemonMaid Cleaning
 > (Dublin, Hilliard, Powell, Lewis Center, Upper Arlington, Bexley, Gahanna, New Albany, Westerville).
 
 ## Services and starting prices
-- Standard house cleaning: from $100 (recurring weekly, bi-weekly, monthly, or one-time)
-- Deep cleaning: from $180 (adds inside windowpanes, hand-detailed baseboards, tile/grout detail)
-- Move-in/move-out cleaning: from $200 (adds inside cabinets, drawers, fridge, freezer, stove)
-- Airbnb / short-term rental turnover: from $80 (linens, staging, restocking)
+- Standard house cleaning: from $150 (recurring weekly, bi-weekly, monthly, or one-time)
+- Deep cleaning: from $280 (adds inside windowpanes, hand-detailed baseboards, tile/grout detail)
+- Move-in/move-out cleaning: from $300 (adds inside cabinets, drawers, fridge, freezer, stove)
+- Airbnb / short-term rental turnover: from $120 (linens, staging, restocking)
 
 ## Key facts
 - Phone (call/text): (614) 756-2656 · Email: support@lemonmaidcleaning.com

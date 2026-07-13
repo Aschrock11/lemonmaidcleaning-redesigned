@@ -31,7 +31,7 @@ const DEEP_FAQS = [
 const deepContent = `
 ${pageHero('', {
   crumbs: [['Home', 'index.html'], ['Services', 'services.html'], ['Deep Cleaning', '']],
-  kicker: 'From $180',
+  kicker: 'From $280',
   h1: 'Deep cleaning service in Columbus, Ohio',
   lead: 'We clean what regular cleaning misses: every surface, every corner, every detail. The full reset your home deserves.',
   ctaLabel: 'Book a Deep Clean',
@@ -74,7 +74,7 @@ ${pageHero('', {
       <p>${f[2]}</p>
     </article>`).join('\n    ')}
   </div>
-  <p class="center mt-56">Most Columbus deep cleans start at <strong>$180</strong> and vary by home size and condition. <a href="pricing.html">View pricing</a> or <a href="services.html">see all services</a>.</p>
+  <p class="center mt-56">Most Columbus deep cleans start at <strong>$280</strong> and vary by home size and condition. <a href="pricing.html">View pricing</a> or <a href="services.html">see all services</a>.</p>
 </div></section>
 
 ${faqSection(DEEP_FAQS, { title: 'Deep cleaning questions' })}
@@ -96,7 +96,7 @@ const MOVE_FAQS = [
 const moveContent = `
 ${pageHero('', {
   crumbs: [['Home', 'index.html'], ['Services', 'services.html'], ['Move-In / Move-Out', '']],
-  kicker: 'From $200',
+  kicker: 'From $300',
   h1: 'Move-in &amp; move-out cleaning in Columbus, Ohio',
   lead: 'Get your property deposit-ready — or move-in ready — with detailed cleaning inside cabinets, appliances, closets, and every major surface.',
   ctaLabel: 'Book Move-Out Cleaning',
@@ -160,7 +160,7 @@ const STR_FAQS = [
 const strContent = `
 ${pageHero('', {
   crumbs: [['Home', 'index.html'], ['Services', 'services.html'], ['Airbnb & STR', '']],
-  kicker: 'From $80 per turnover',
+  kicker: 'From $120 per turnover',
   h1: 'Airbnb &amp; short-term rental cleaning in Columbus, Ohio',
   lead: 'Keep every guest arrival 5-star ready with reliable turnover cleaning, linen changes, and restocking support for Columbus hosts.',
   ctaLabel: 'Book STR Cleaning',
@@ -217,12 +217,12 @@ module.exports = [
     html: renderPage({
       path: 'deep-cleaning-columbus-ohio.html',
       title: 'Deep Cleaning Service Columbus Ohio | LemonMaid Cleaning',
-      desc: 'LemonMaid offers professional deep cleaning in Columbus, Ohio. Top-to-bottom cleaning of every surface, appliance, and detail. Starting at $180. Book online today.',
+      desc: 'LemonMaid offers professional deep cleaning in Columbus, Ohio. Top-to-bottom cleaning of every surface, appliance, and detail. Starting at $280. Book online today.',
       canonical: `${BIZ.domain}/deep-cleaning-columbus-ohio`,
       active: 'services',
       jsonld: [
         crumbsLd([['Home', 'index.html'], ['Services', 'services.html'], ['Deep Cleaning', '']], `${BIZ.domain}/deep-cleaning-columbus-ohio`),
-        serviceJsonLd('Deep Cleaning Service', 'Deep House Cleaning', 'Professional deep cleaning service in Columbus, Ohio including detailed top-to-bottom cleaning.', '180'),
+        serviceJsonLd('Deep Cleaning Service', 'Deep House Cleaning', 'Professional deep cleaning service in Columbus, Ohio including detailed top-to-bottom cleaning.', '280'),
         faqJsonLd(DEEP_FAQS),
       ],
       content: deepContent,
@@ -238,7 +238,7 @@ module.exports = [
       active: 'services',
       jsonld: [
         crumbsLd([['Home', 'index.html'], ['Services', 'services.html'], ['Move-In / Move-Out', '']], `${BIZ.domain}/move-out-cleaning-columbus-ohio`),
-        serviceJsonLd('Move-In/Move-Out Cleaning Service', 'Move Out House Cleaning', 'Professional move-in and move-out cleaning in Columbus, Ohio with inside-appliance and cabinet detailing.', '200'),
+        serviceJsonLd('Move-In/Move-Out Cleaning Service', 'Move Out House Cleaning', 'Professional move-in and move-out cleaning in Columbus, Ohio with inside-appliance and cabinet detailing.', '300'),
         faqJsonLd(MOVE_FAQS),
       ],
       content: moveContent,
@@ -254,7 +254,7 @@ module.exports = [
       active: 'services',
       jsonld: [
         crumbsLd([['Home', 'index.html'], ['Services', 'services.html'], ['Airbnb & STR Cleaning', '']], `${BIZ.domain}/airbnb-cleaning-columbus-ohio`),
-        serviceJsonLd('Airbnb & Short-Term Rental Cleaning', 'Vacation Rental Cleaning', 'Turnover cleaning for Airbnb and short-term rentals in Columbus, Ohio with linen changes and restocking.', '80'),
+        serviceJsonLd('Airbnb & Short-Term Rental Cleaning', 'Vacation Rental Cleaning', 'Turnover cleaning for Airbnb and short-term rentals in Columbus, Ohio with linen changes and restocking.', '120'),
         faqJsonLd(STR_FAQS),
       ],
       content: strContent,

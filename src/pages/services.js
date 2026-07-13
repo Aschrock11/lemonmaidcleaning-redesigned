@@ -8,7 +8,7 @@ const SERVICE_ROWS = [
     id: 'standard',
     img: 'bright-living', alt: 'Sunlit living room kept tidy with recurring standard cleaning',
     title: 'Standard Cleaning',
-    price: 'From $100',
+    price: 'From $150',
     href: 'booking.html', linkLabel: 'Book Standard Cleaning',
     desc: 'The clean that keeps your home feeling handled, week after week. Perfect as recurring service (weekly, bi-weekly, or monthly) or a one-time refresh.',
     includes: ['Dusting, vacuuming, and mopping throughout', 'Kitchen counters, sink, and appliance exteriors', 'Bathroom sanitizing — toilets, tubs, showers, and sinks', 'Ceiling fans, light fixtures, and general surface dusting', 'Trash emptied and beds tidied'],
@@ -17,7 +17,7 @@ const SERVICE_ROWS = [
     id: 'deep',
     img: 'bathroom-modern', alt: 'Gleaming glass shower and vanity after a deep cleaning',
     title: 'Deep Cleaning',
-    price: 'From $180',
+    price: 'From $280',
     href: 'deep-cleaning-columbus-ohio.html', linkLabel: 'See Deep Cleaning',
     desc: 'A top-to-bottom reset for first-time cleans, seasonal refreshes, or homes that need extra love. Everything in a standard clean, plus the details.',
     includes: ['Everything in Standard Cleaning', 'Inside windowpanes (inside only)', 'Baseboards hand-detailed', 'Tile and grout detail work', 'Wall spot-checking and hood vent detailing'],
@@ -26,7 +26,7 @@ const SERVICE_ROWS = [
     id: 'moveout',
     img: 'empty-room', alt: 'Empty, spotless living area ready for a final walkthrough',
     title: 'Move-In / Move-Out Cleaning',
-    price: 'From $200',
+    price: 'From $300',
     href: 'move-out-cleaning-columbus-ohio.html', linkLabel: 'See Move-Out Cleaning',
     desc: 'Deposit-ready cleaning designed for transitions — whether you’re handing back keys or picking up new ones.',
     includes: ['Everything in Deep Cleaning', 'Inside cabinets and drawers', 'Inside fridge, freezer, and stove', 'Closets wiped and detailed', 'Landlord-ready checklist'],
@@ -35,7 +35,7 @@ const SERVICE_ROWS = [
     id: 'airbnb',
     img: 'bedroom', alt: 'Guest-ready bedroom staged after a short-term rental turnover',
     title: 'Airbnb & Short-Term Rental Cleaning',
-    price: 'From $80',
+    price: 'From $120',
     href: 'airbnb-cleaning-columbus-ohio.html', linkLabel: 'See STR Cleaning',
     desc: 'Reliable turnover cleans that protect your ratings. Same-day scheduling, linen changes, and restocking for host-ready stays.',
     includes: ['Full turnover clean between guests', 'Linen changes and bed staging', 'Restocking of essentials', 'Checklist-based process with photo confirmation available', 'Same-day scheduling'],
@@ -116,28 +116,28 @@ ${ctaBanner('', { title: 'Not sure which clean is right? We’ll help.', lead: '
 
 const PRICE_CARDS = [
   {
-    title: 'Standard Cleaning', amount: '$100', desc: 'Recurring upkeep or a one-time refresh for a lived-in home.',
+    title: 'Standard Cleaning', amount: '$150', desc: 'Recurring upkeep or a one-time refresh for a lived-in home.',
     perks: ['Kitchens, baths, bedrooms & living areas', 'Weekly, bi-weekly, or monthly', 'Supplies included'],
   },
   {
-    title: 'Deep Cleaning', amount: '$180', popular: true, desc: 'The top-to-bottom reset — ideal for first-time cleans.',
+    title: 'Deep Cleaning', amount: '$280', popular: true, desc: 'The top-to-bottom reset — ideal for first-time cleans.',
     perks: ['Everything in Standard', 'Baseboards, windowpanes & grout detail', 'Best first-visit value'],
   },
   {
-    title: 'Move-In / Move-Out', amount: '$200', desc: 'Deposit-ready cleaning for moving transitions.',
+    title: 'Move-In / Move-Out', amount: '$300', desc: 'Deposit-ready cleaning for moving transitions.',
     perks: ['Everything in Deep', 'Inside cabinets & drawers', 'Inside fridge, freezer & stove'],
   },
   {
-    title: 'Airbnb Turnover', amount: '$80', desc: 'Guest-ready turnovers for short-term rental hosts.',
+    title: 'Airbnb Turnover', amount: '$120', desc: 'Guest-ready turnovers for short-term rental hosts.',
     perks: ['Full turnover clean', 'Linen change & staging', 'Restocking essentials'],
   },
 ];
 
 const PRICE_TABLE = [
-  ['Standard Cleaning', 'From $100', 'From $130', 'From $160', 'Custom quote'],
-  ['Deep Cleaning', 'From $180', 'From $220', 'From $270', 'Custom quote'],
-  ['Move-In/Move-Out', 'From $200', 'From $250', 'From $300', 'Custom quote'],
-  ['Airbnb Turnover', 'From $80', 'From $120', 'From $150', 'Custom quote'],
+  ['Standard Cleaning', 'From $150', 'From $200', 'From $250', 'Custom quote'],
+  ['Deep Cleaning', 'From $280', 'From $340', 'From $420', 'Custom quote'],
+  ['Move-In/Move-Out', 'From $300', 'From $380', 'From $460', 'Custom quote'],
+  ['Airbnb Turnover', 'From $120', 'From $180', 'From $230', 'Custom quote'],
 ];
 
 const PRICING_FAQS = [
@@ -218,7 +218,7 @@ module.exports = [
     html: renderPage({
       path: 'pricing.html',
       title: 'House Cleaning Prices Columbus Ohio | LemonMaid Cleaning',
-      desc: 'See transparent starting prices for house cleaning in Columbus, OH. Standard cleaning from $100, deep cleaning from $180. Get your exact quote online in 60 seconds.',
+      desc: 'See transparent starting prices for house cleaning in Columbus, OH. Standard cleaning from $150, deep cleaning from $280. Get your exact quote online in 60 seconds.',
       canonical: `${BIZ.domain}/pricing`,
       active: 'pricing',
       jsonld: [crumbsLd([['Home', 'index.html'], ['Pricing', '']], `${BIZ.domain}/pricing`), faqJsonLd(PRICING_FAQS)],
